@@ -23,12 +23,13 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v4  
+
     - name: download artifact
       uses: actions/download-artifact@v8
       with:
-        name: hello-artifact
-    - name: Checkout code
-      uses: actions/checkout@v4    
+        name: hello-artifact  
 
  
     - name: read artifact
